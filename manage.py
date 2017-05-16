@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 from flask_script import Server, Manager
 from app import app
-from instance.config import BaseConfig
+from app.config.development import DevelopmentConfig
 
 manager = Manager(app)
-app.config.from_object(BaseConfig)
+app.config.from_object(DevelopmentConfig)
 
 manager.add_command("runserver", Server())
 
